@@ -96,3 +96,5 @@ main {
 #enter {
   background: rgba(255,255,255,0.08);
 }
+
+#splash, #splash * { color: rgba(245,245,245,0.92) !important; }
