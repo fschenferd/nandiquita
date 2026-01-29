@@ -98,3 +98,6 @@ main {
 }
 
 #splash, #splash * { color: rgba(245,245,245,0.92) !important; }
+
+#viewer[hidden] { display: none !important; }
+
