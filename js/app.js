@@ -75,3 +75,25 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
 });
+
+// Subtle hover drift (pointer-based parallax) for cards
+document.querySelectorAll(".card").forEach((card) => {
+  const img = card.querySelector(".card-media img");
+  if (!img) return;
+
+  card.addEventListener("mousemove", (e) => {
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width;   // 0..1
+    const py = (e.clientY - r.top) / r.height;   // 0..1
+
+    // small, restrained drift
+    const dx = (px - 0.5) * 10; // px
+    const dy = (py - 0.5) * 6;  // px
+
+    img.style.transform = `scale(1.08) translate(${dx}px, ${dy}px)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    img.style.transform = "scale(1.03) translate(0px, 0px)";
+  });
+});
