@@ -97,16 +97,6 @@ main{
   border-color: rgba(255,255,255,0.22);
 }
 
-.project a::before{
-  content: "SERIES";
-  display:block;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-
 .project a{
   font-family: "Cinzel", serif;
   font-size: clamp(1.1rem, 2.2vw, 1.55rem);
