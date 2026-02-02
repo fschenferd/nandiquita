@@ -19,13 +19,21 @@ document.addEventListener("DOMContentLoaded", () => {
     enterBtn.onclick = () => splash.remove();
   }
   
- if (window.location.hash && splash) {
-    splash.remove();
+if (window.location.hash && splash) {
+  splash.remove();
+
+  // force vertical scroll after splash removal
+  setTimeout(() => {
     const target = document.querySelector(window.location.hash);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: "auto"
+      });
     }
-  }
+  }, 0);
+}
+
 
   /* -----------------------------
      Work titles (from folder names)
