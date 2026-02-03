@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function formatProjectName(slug) {
     return slug.replace(/-/g, " ").toUpperCase();
   }
-
+ 
   /* -----------------------------
      Splash
   ----------------------------- */
